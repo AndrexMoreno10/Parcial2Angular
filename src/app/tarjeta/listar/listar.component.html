@@ -1,0 +1,20 @@
+<!-- lista-tarjetas.component.html -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let tarjeta of tarjetas">
+            <div class="card mb-4" style="min-width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Titular:</h5>
+                    <p class="card-text">{{ tarjeta.titular || 'Sin titular' }}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Número de Tarjeta:</h6>
+                    <p class="card-text">{{ tarjeta.numero || 'Sin número' }}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Fecha de Expiración (MM/YY):</h6>
+                    <p class="card-text">{{ tarjeta.fecha || 'Sin fecha' }}</p>
+                    <h6 class="card-subtitle mb-2 text-muted">CVV (3 dígitos):</h6>
+                    <p class="card-text">{{ tarjeta.cvv || 'Sin CVV' }}</p>
+                    <a  class="btn btn-primary" (click)="irAEditar(tarjeta._id)">Editar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
